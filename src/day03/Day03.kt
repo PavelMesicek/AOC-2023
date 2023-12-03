@@ -80,7 +80,7 @@ fun main() {
                 when {
                     gearsInCurrentLine.contains(currentNumber.firstIndex - 1) -> {
                         numbersInPreviousLine.forEach { previousNumber ->
-                            val expandedRange = (previousNumber.firstIndex - 1).coerceAtLeast(0)..(previousNumber.lastIndex + 1).coerceAtMost(10000 - 1)
+                            val expandedRange = (previousNumber.firstIndex - 1).coerceAtLeast(0)..(previousNumber.lastIndex + 1)
                             if (expandedRange.contains(currentNumber.firstIndex - 1)) {
                                 total += currentNumber.value * previousNumber.value
                             }
@@ -89,7 +89,7 @@ fun main() {
 
                     gearsInCurrentLine.contains(currentNumber.lastIndex + 1) -> {
                         numbersInPreviousLine.forEach { previousNumber ->
-                            val expandedRange = (previousNumber.firstIndex - 1).coerceAtLeast(0)..(previousNumber.lastIndex + 1).coerceAtMost(10000 - 1)
+                            val expandedRange = (previousNumber.firstIndex - 1).coerceAtLeast(0)..(previousNumber.lastIndex + 1)
                             if (expandedRange.contains(currentNumber.lastIndex + 1)) {
                                 total += currentNumber.value * previousNumber.value
                             }
@@ -105,7 +105,7 @@ fun main() {
                 when {
                     gearsInPreviousLine.contains(previousNumber.firstIndex - 1) -> {
                         numbersInCurrentLine.forEach { currentNumber ->
-                            val expandedRange = (currentNumber.firstIndex - 1).coerceAtLeast(0)..(currentNumber.lastIndex + 1).coerceAtMost(10000 - 1)
+                            val expandedRange = (currentNumber.firstIndex - 1).coerceAtLeast(0)..(currentNumber.lastIndex + 1)
                             if (expandedRange.contains(previousNumber.firstIndex - 1)) {
                                 total += currentNumber.value * previousNumber.value
                             }
@@ -114,7 +114,7 @@ fun main() {
 
                     gearsInPreviousLine.contains(previousNumber.lastIndex + 1) -> {
                         numbersInCurrentLine.forEach { currentNumber ->
-                            val expandedRange = (currentNumber.firstIndex - 1).coerceAtLeast(0)..(currentNumber.lastIndex + 1).coerceAtMost(10000 - 1)
+                            val expandedRange = (currentNumber.firstIndex - 1).coerceAtLeast(0)..(currentNumber.lastIndex + 1)
                             if (expandedRange.contains(previousNumber.lastIndex + 1)) {
                                 total += currentNumber.value * previousNumber.value
                             }
