@@ -2,7 +2,6 @@ package day03
 
 import println
 import readInput
-import kotlin.math.max
 
 fun main() {
     fun part1(input: List<String>): Int {
@@ -148,11 +147,11 @@ fun main() {
 
 
     val testInput = readInput("day03/Day03_test")
-//    "Test part1 ${part1(testInput).toString().println()}"
+    "Test part1 ${part1(testInput).toString().println()}"
     "Test part2 ${part2(testInput).toString().println()}"
 
     val input = readInput("day03/Day03")
-//    "Final part1 ${part1(input).toString().println()}"
+    "Final part1 ${part1(input).toString().println()}"
     "Final part2 ${part2(input).toString().println()}"
 }
 
