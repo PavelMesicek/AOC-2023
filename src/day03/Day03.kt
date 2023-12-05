@@ -153,6 +153,7 @@ fun main() {
     val input = readInput("day03/Day03")
     "Final part1 ${part1(input).toString().println()}"
     "Final part2 ${part2(input).toString().println()}"
+    // 75519888
 }
 
 fun String.findNumbersInText(): List<NumbersAndSymbols> =
