@@ -3,6 +3,22 @@ package day03
 import println
 import readInput
 
+fun String.findNumbersInText(): List<NumbersAndSymbols> =
+        "\\d+".toRegex().findAll(this).map { NumbersAndSymbols(it.range, it.range.first, it.range.last, it.value.toInt()) }.toList()
+
+fun String.findSymbolsInText(): List<Int> =
+        "[^\\s\\.\\w]".toRegex().findAll(this).map { it.range.first }.toList()
+
+fun String.findGearSymbolsInText(): List<Int> =
+        "\\*".toRegex().findAll(this).map { it.range.first }.toList()
+
+data class NumbersAndSymbols(
+        val range: IntRange,
+        val firstIndex: Int,
+        val lastIndex: Int,
+        val value: Int,
+)
+
 fun main() {
     fun part1(input: List<String>): Int {
         var total = 0
@@ -155,19 +171,3 @@ fun main() {
     "Final part2 ${part2(input).toString().println()}"
     // 75519888
 }
-
-fun String.findNumbersInText(): List<NumbersAndSymbols> =
-        "\\d+".toRegex().findAll(this).map { NumbersAndSymbols(it.range, it.range.first, it.range.last, it.value.toInt()) }.toList()
-
-fun String.findSymbolsInText(): List<Int> =
-        "[^\\s\\.\\w]".toRegex().findAll(this).map { it.range.first }.toList()
-
-fun String.findGearSymbolsInText(): List<Int> =
-        "\\*".toRegex().findAll(this).map { it.range.first }.toList()
-
-data class NumbersAndSymbols(
-        val range: IntRange,
-        val firstIndex: Int,
-        val lastIndex: Int,
-        val value: Int,
-)
